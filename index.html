@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العرض الفني والتسويقي - مركز دار ديجور للعناية والتجميل | شركة شراع</title>
+    <!-- استدعاء مكتبة Tailwind CSS للتصميم المتجاوب والعصري -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- استدعاء خط Cairo من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: radial-gradient(circle at top right, #064e3b, #042f2e 45%, #022c22 100%);
+            color: #f0fdfa;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* تأثيرات البطاقات الزجاجية */
+        .glass-card {
+            background: rgba(19, 78, 74, 0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(45, 212, 191, 0.25);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4);
+        }
+        .glass-card-dark {
+            background: rgba(4, 47, 46, 0.65);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+        }
+        /* خطوط الربط في المخطط الهيكلي */
+        .tree-connector-v {
+            width: 3px;
+            background: linear-gradient(to bottom, #2dd4bf, #0d9488);
+            margin: 0 auto;
+        }
+        /* حركة الطفو للشعار والأيقونات */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+        .animate-float {
+            animation: floatSlow 3.5s ease-in-out infinite;
+        }
+        /* حركة الطفو والتوهج المستمر للوجو العائم */
+        @keyframes floatAndGlow {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                box-shadow: 0 0 18px rgba(45, 212, 191, 0.45), 0 0 32px rgba(20, 184, 166, 0.25);
+            }
+            50% {
+                transform: translateY(-8px) scale(1.04);
+                box-shadow: 0 0 28px rgba(45, 212, 191, 0.85), 0 0 48px rgba(34, 211, 238, 0.55);
+            }
+        }
+        .floating-glow-logo {
+            animation: floatAndGlow 3.2s ease-in-out infinite;
+        }
+        /* توهج البطاقة المالية */
+        @keyframes goldPulse {
+            0%, 100% {
+                box-shadow: 0 0 25px rgba(251, 191, 36, 0.2), 0 15px 35px -5px rgba(0, 0, 0, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 42px rgba(251, 191, 36, 0.42), 0 20px 45px -5px rgba(0, 0, 0, 0.6);
+            }
+        }
+        .financial-glow {
+            animation: goldPulse 3.5s ease-in-out infinite;
+        }
+        /* تأثيرات الموشن لظهور الأقسام والبطاقات */
+        .motion-reveal {
+            opacity: 0;
+            transform: translateY(30px) scale(0.985);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .motion-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .motion-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .motion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.55), 0 0 20px rgba(45, 212, 191, 0.15);
+            border-color: rgba(45, 212, 191, 0.55);
+        }
+        /* شريط التمرير المخصص */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #022c22;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d9488;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="pb-28 relative">
+
+    <!-- خلفية شبكية هندسية خفيفة -->
+    <div class="fixed inset-0 pointer-events-none opacity-15 z-0" 
+         style="background-image: radial-gradient(#2dd4bf 1px, transparent 1px); background-size: 28px 28px;"></div>
+
+    <!-- رأس الصفحة (Header Infographic Banner) -->
+    <header class="relative z-10 pt-10 pb-12 px-4 border-b border-teal-700/40 bg-gradient-to-b from-teal-950/90 to-transparent">
+        <div class="max-w-5xl mx-auto flex flex-col items-center text-center gap-6">
+            <!-- اللوجو الرئيسي في منتصف أعلى العرض -->
+            <div class="w-28 h-28 rounded-2xl p-1.5 bg-gradient-to-tr from-teal-400 to-cyan-300 shadow-2xl animate-float flex-shrink-0">
+                <img src="https://i.ibb.co/3mcGJZDm/f7a2f35c-a1d9-41a9-abab-883812218eaf.jpg" 
+                     alt="شعار شركة شراع" 
+                     class="w-full h-full object-cover rounded-xl">
+            </div>
+
+            <!-- العنوان الرئيسي والشارة -->
+            <div class="max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 px-3.5 py-1 rounded-full text-xs font-bold mb-3">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    العرض الفني والتسويقي
+                </div>
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight">
+                    خطة إدارة حسابات التواصل الاجتماعي والحملات الإعلانية الممولة
+                </h1>
+                <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+                    <span class="bg-teal-900/80 border border-teal-500/40 text-teal-100 px-4 py-1.5 rounded-full text-xs md:text-sm font-bold">
+                        مقدمة من شركة شراع إلى مركز دار ديجور للعناية والتجميل
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي للمخطط -->
+    <main class="max-w-7xl mx-auto px-4 mt-8 space-y-12 relative z-10">
+
+        <!-- أولاً: مقدمة المشروع -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-teal-400">
+            <div class="border-b border-teal-700/50 pb-4 mb-5">
+                <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">الرؤية والاستراتيجية المزدوجة</span>
+                <h2 class="text-2xl font-black text-white mt-1">أولاً: مقدمة المشروع</h2>
+            </div>
+            <div class="space-y-4 text-teal-50 text-sm md:text-base leading-relaxed">
+                <p>تسعى شركة شراع من خلال هذا العرض إلى وضع وتنفيذ استراتيجية تسويقية رقمية متكاملة لمركز دار ديجور، بهدف تعزيز الحضور الرقمي للعلامة التجارية، وزيادة الوعي بخدمات المركز، واستقطاب عملاء جدد، وتحفيز العملاء الحاليين على تكرار الزيارة والاستفادة من الخدمات المقدمة.</p>
+                <p>ونظراً لاختلاف طبيعة الجمهور المستهدف بين القسم الرجالي والقسم النسائي، سيتم تنفيذ استراتيجيتين تسويقيتين منفصلتين، بحيث يمتلك كل قسم هويته التسويقية ومحتواه الإبداعي ورسائله الإعلانية، مع الحفاظ على الهوية العامة لعلامة دار ديجور.</p>
+                <div class="inline-block bg-amber-500/20 border border-amber-400/50 text-amber-200 px-5 py-2 rounded-2xl text-sm md:text-base font-black">
+                    مدة تنفيذ الخطة: 3 أشهر.
+                </div>
+            </div>
+        </section>
+
+        <!-- القسم الأول: الخطة التسويقية للقسم الرجالي -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-cyan-400">
+            <div class="text-center max-w-3xl mx-auto mb-6">
+                <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider">استراتيجية القسم الرجالي - الرياض</span>
+                <h2 class="text-2xl md:text-3xl font-black text-white mt-1">القسم الأول: الخطة التسويقية للقسم الرجالي</h2>
+            </div>
+
+            <!-- 1. الأهداف التسويقية و 2. الجمهور المستهدف -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="glass-card-dark motion-card p-6 rounded-3xl border-r-4 border-cyan-400">
+                    <h3 class="font-black text-white text-lg md:text-xl border-b border-teal-800/80 pb-3 mb-4">1. الأهداف التسويقية للقسم الرجالي</h3>
+                    <p class="text-xs md:text-sm text-teal-200 mb-3 font-semibold">تهدف الاستراتيجية التسويقية للقسم الرجالي إلى تحقيق الأهداف التالية:</p>
+                    <ol class="list-decimal list-inside space-y-2 text-xs md:text-sm text-teal-50 leading-relaxed">
+                        <li>تعزيز انتشار العلامة التجارية لدار ديجور بين الرجال في مدينة الرياض.</li>
+                        <li>بناء صورة ذهنية تعكس الاحترافية والفخامة وجودة خدمات العناية الشخصية.</li>
+                        <li>استقطاب عملاء جدد من الفئات العمرية المستهدفة.</li>
+                        <li>زيادة الحجوزات والزيارات للفروع الرجالية.</li>
+                        <li>التعريف بالخدمات المتاحة وإبراز مميزاتها.</li>
+                        <li>زيادة معدلات التفاعل مع الحسابات الرقمية.</li>
+                        <li>تحويل المتابعين والمهتمين إلى عملاء فعليين من خلال الحملات الإعلانية.</li>
+                        <li>تعزيز ولاء العملاء الحاليين وتحفيزهم على تكرار الزيارة.</li>
+                    </ol>
+                </div>
+
+                <div class="glass-card-dark motion-card p-6 rounded-3xl border-r-4 border-teal-400">
+                    <h3 class="font-black text-white text-lg md:text-xl border-b border-teal-800/80 pb-3 mb-4">2. الجمهور المستهدف</h3>
+                    <p class="text-xs md:text-sm text-teal-200 mb-3 font-semibold">سيتم توجيه المحتوى والحملات الإعلانية إلى الشرائح التالية:</p>
+                    <ul class="list-disc list-inside space-y-2.5 text-xs md:text-sm text-teal-50 leading-relaxed">
+                        <li>الرجال من عمر 20 إلى 50 عاماً.</li>
+                        <li>الموظفون ورجال الأعمال والمهنيون.</li>
+                        <li>المهتمون بالعناية الشخصية والمظهر الخارجي.</li>
+                        <li>المهتمون بخدمات العناية بالشعر والبشرة والجسم.</li>
+                        <li>الباحثون عن مراكز عناية احترافية ذات مستوى خدمة متميز.</li>
+                        <li>سكان الأحياء والمناطق القريبة من الفروع الرجالية في الرياض.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. استراتيجية المحتوى للقسم الرجالي -->
+            <div class="mb-8">
+                <div class="glass-card-dark p-5 rounded-2xl border border-cyan-500/30 mb-5">
+                    <h3 class="font-black text-white text-lg md:text-xl mb-1">3. استراتيجية المحتوى للقسم الرجالي</h3>
+                    <p class="text-xs md:text-sm text-teal-100 leading-relaxed">سيتم إعداد محتوى تسويقي متنوع يركز على إبراز جودة الخدمات وتجربة العميل داخل المركز، مع مراعاة طبيعة اهتمامات الجمهور الرجالي.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="men-content-grid"></div>
+            </div>
+
+            <!-- 4. استراتيجية الحملات الإعلانية للقسم الرجالي -->
+            <div>
+                <div class="glass-card-dark p-5 rounded-2xl border border-cyan-500/30 mb-5">
+                    <h3 class="font-black text-white text-lg md:text-xl mb-1">4. استراتيجية الحملات الإعلانية للقسم الرجالي</h3>
+                    <p class="text-xs md:text-sm text-teal-100 leading-relaxed">سيتم تنفيذ حملات إعلانية ممولة تستهدف الجمهور الرجالي في المناطق الجغرافية المحيطة بالفروع، مع التركيز على تحقيق نتائج قابلة للقياس.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="men-ads-grid"></div>
+            </div>
+        </section>
+
+        <!-- القسم الثاني: الخطة التسويقية للقسم النسائي -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-emerald-400">
+            <div class="text-center max-w-3xl mx-auto mb-6">
+                <span class="text-xs font-bold text-emerald-300 uppercase tracking-wider">استراتيجية القسم النسائي - الروضة والغدير</span>
+                <h2 class="text-2xl md:text-3xl font-black text-white mt-1">القسم الثاني: الخطة التسويقية للقسم النسائي</h2>
+            </div>
+
+            <!-- 1. الأهداف التسويقية و 2. الجمهور المستهدف -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="glass-card-dark motion-card p-6 rounded-3xl border-r-4 border-emerald-400">
+                    <h3 class="font-black text-white text-lg md:text-xl border-b border-teal-800/80 pb-3 mb-4">1. الأهداف التسويقية للقسم النسائي</h3>
+                    <p class="text-xs md:text-sm text-teal-200 mb-3 font-semibold">تهدف الاستراتيجية التسويقية للقسم النسائي إلى:</p>
+                    <ol class="list-decimal list-inside space-y-2 text-xs md:text-sm text-teal-50 leading-relaxed">
+                        <li>تعزيز مكانة دار ديجور كوجهة متخصصة في العناية والجمال.</li>
+                        <li>زيادة الوعي بالخدمات النسائية المقدمة.</li>
+                        <li>الوصول إلى شريحة أكبر من النساء في مدينة الرياض.</li>
+                        <li>زيادة الحجوزات في فروع الروضة والغدير.</li>
+                        <li>إبراز جودة الخدمات والتجربة المقدمة للعميلات.</li>
+                        <li>تعزيز التفاعل مع الحسابات الرقمية.</li>
+                        <li>استقطاب عميلات جديدات وتحفيز العميلات السابقات على تكرار الزيارة.</li>
+                        <li>دعم المبيعات من خلال الترويج للخدمات والباقات والعروض.</li>
+                    </ol>
+                </div>
+
+                <div class="glass-card-dark motion-card p-6 rounded-3xl border-r-4 border-amber-400">
+                    <h3 class="font-black text-white text-lg md:text-xl border-b border-teal-800/80 pb-3 mb-4">2. الجمهور المستهدف</h3>
+                    <p class="text-xs md:text-sm text-teal-200 mb-3 font-semibold">سيتم استهداف الشرائح التالية:</p>
+                    <ul class="list-disc list-inside space-y-2 text-xs md:text-sm text-teal-50 leading-relaxed">
+                        <li>النساء من عمر 18 إلى 50 عاماً.</li>
+                        <li>المهتمات بالجمال والعناية الشخصية.</li>
+                        <li>الموظفات وسيدات الأعمال.</li>
+                        <li>المقبلات على المناسبات والأعياد والاحتفالات.</li>
+                        <li>المهتمات بالعناية بالشعر والبشرة والجسم.</li>
+                        <li>الباحثات عن خدمات السبا والاسترخاء.</li>
+                        <li>النساء المقيمات في المناطق القريبة من فرعي الروضة والغدير.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. استراتيجية المحتوى للقسم النسائي -->
+            <div class="mb-8">
+                <div class="glass-card-dark p-5 rounded-2xl border border-emerald-500/30 mb-5">
+                    <h3 class="font-black text-white text-lg md:text-xl mb-1">3. استراتيجية المحتوى للقسم النسائي</h3>
+                    <p class="text-xs md:text-sm text-teal-100 leading-relaxed">سيتم بناء استراتيجية محتوى متكاملة تعتمد على إبراز الجانب الجمالي والاحترافي للمركز، مع تقديم محتوى جذاب يعكس مستوى الخدمات والتجربة المقدمة للعميلات.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="women-content-grid"></div>
+            </div>
+
+            <!-- 4. استراتيجية الحملات الإعلانية للقسم النسائي -->
+            <div>
+                <div class="glass-card-dark p-5 rounded-2xl border border-emerald-500/30 mb-5">
+                    <h3 class="font-black text-white text-lg md:text-xl mb-1">4. استراتيجية الحملات الإعلانية للقسم النسائي</h3>
+                    <p class="text-xs md:text-sm text-teal-100 leading-relaxed">سيتم تخصيص حملات إعلانية مستقلة للقسم النسائي، مع تحديد أهداف كل حملة والجمهور المناسب لها.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="women-ads-grid"></div>
+            </div>
+        </section>
+
+        <!-- ثالثاً: خطة إدارة حسابات التواصل الاجتماعي -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-teal-400">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">التشغيل والإدارة الرقمية</span>
+                <h2 class="text-2xl font-black text-white mt-1">ثالثاً: خطة إدارة حسابات التواصل الاجتماعي</h2>
+                <p class="text-teal-100 text-sm md:text-base mt-2 leading-relaxed">ستتولى شركة شراع إدارة المحتوى الرقمي للقسمين الرجالي والنسائي وفق استراتيجية موحدة في الهوية العامة ومستقلة في الرسائل التسويقية.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="sm-management-grid"></div>
+        </section>
+
+        <!-- رابعاً: خطة إدارة الحملات الإعلانية الممولة -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-cyan-400">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider">المنصات والمنهجية الإعلانية</span>
+                <h2 class="text-2xl font-black text-white mt-1">رابعاً: خطة إدارة الحملات الإعلانية الممولة</h2>
+                <p class="text-teal-100 text-sm md:text-base mt-2 leading-relaxed">تتولى شركة شراع التخطيط والإعداد والإدارة والتحسين المستمر للحملات الإعلانية الخاصة بالقسمين.</p>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="font-black text-amber-300 text-lg md:text-xl mb-4">المنصات الإعلانية</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="ad-platforms-grid"></div>
+            </div>
+
+            <div class="glass-card-dark motion-card p-6 rounded-3xl border-r-4 border-cyan-400">
+                <h3 class="font-black text-white text-lg md:text-xl border-b border-teal-800/80 pb-3 mb-4">آلية إدارة الحملات</h3>
+                <ol class="list-decimal list-inside grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm text-teal-50 leading-relaxed" id="ad-mechanism-list"></ol>
+            </div>
+        </section>
+
+        <!-- خامساً: الجدول الزمني لتنفيذ الخطة -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-amber-400">
+            <div class="text-center max-w-3xl mx-auto mb-8">
+                <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">خارطة الطريق لمدة 3 أشهر</span>
+                <h2 class="text-2xl md:text-3xl font-black text-white mt-1">خامساً: الجدول الزمني لتنفيذ الخطة</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" id="timeline-grid"></div>
+        </section>
+
+        <!-- سادساً: مؤشرات قياس الأداء والتقارير & سابعاً: المخرجات النهائية للخطة -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-emerald-400">
+                <div class="border-b border-teal-700/50 pb-4 mb-5">
+                    <span class="text-xs font-bold text-emerald-300 uppercase tracking-wider">القياس والتحليل الدوري</span>
+                    <h2 class="text-xl md:text-2xl font-black text-white mt-1">سادساً: مؤشرات قياس الأداء والتقارير</h2>
+                    <p class="text-teal-100 text-xs md:text-sm mt-2 leading-relaxed">تعتمد شركة شراع على مجموعة من المؤشرات لقياس مدى نجاح الخطة التسويقية، وتشمل:</p>
+                </div>
+                <ol class="list-decimal list-inside space-y-2 text-xs md:text-sm text-teal-50 leading-relaxed mb-5" id="kpis-list"></ol>
+                <div class="bg-teal-950/80 p-4 rounded-2xl border border-emerald-500/40 text-xs md:text-sm text-emerald-200 leading-relaxed">
+                    <strong>التقارير:</strong> تقديم تقرير شهري يوضح أداء الحسابات والحملات الإعلانية، مع تحليل النتائج والتوصيات اللازمة لتطوير الأداء خلال الفترة التالية.
+                </div>
+            </section>
+
+            <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-teal-400">
+                <div class="border-b border-teal-700/50 pb-4 mb-5">
+                    <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">النتائج الملموسة بنهاية التعاقد</span>
+                    <h2 class="text-xl md:text-2xl font-black text-white mt-1">سابعاً: المخرجات النهائية للخطة</h2>
+                    <p class="text-teal-100 text-xs md:text-sm mt-2 leading-relaxed">بنهاية فترة التعاقد، تعمل شركة شراع على تحقيق المخرجات التالية:</p>
+                </div>
+                <ul class="list-disc list-inside space-y-2.5 text-xs md:text-sm text-teal-50 leading-relaxed" id="deliverables-list"></ul>
+            </section>
+        </div>
+
+        <!-- ثامناً: العرض المالي -->
+        <section class="glass-card motion-reveal financial-glow rounded-3xl p-6 md:p-10 border-2 border-amber-400/70 bg-gradient-to-br from-teal-950/90 via-teal-900/80 to-cyan-950/85 relative overflow-hidden">
+            <div class="absolute -left-16 -bottom-16 w-56 h-56 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -right-16 -top-16 w-56 h-56 bg-teal-400/15 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10">
+                <div class="border-b border-teal-700/60 pb-4 mb-6 text-center md:text-right">
+                    <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">الاستثمار التسويقي المتكامل</span>
+                    <h2 class="text-2xl md:text-3xl font-black text-white mt-1">ثامناً: العرض المالي</h2>
+                    <p class="text-teal-100 text-sm md:text-base mt-2 leading-relaxed">تقدم شركة شراع باقة متكاملة لإدارة حسابات التواصل الاجتماعي والحملات الإعلانية الممولة للقسمين الرجالي والنسائي، وفق نطاق العمل الموضح في هذا العرض.</p>
+                </div>
+
+                <!-- بطاقة إبراز السعر ومدة التعاقد -->
+                <div class="bg-teal-950/85 border-2 border-amber-400/60 rounded-3xl p-6 md:p-8 text-center shadow-2xl mb-6 motion-card">
+                    <span class="inline-block bg-amber-500/20 border border-amber-400/50 text-amber-200 text-sm md:text-base font-black px-5 py-1.5 rounded-full mb-4">
+                        مدة التعاقد: 3 أشهر.
+                    </span>
+                    <p class="text-lg md:text-xl font-bold text-teal-100 mb-2">
+                        إجمالي تكلفة الخدمات لمدة ثلاثة أشهر:
+                    </p>
+                    <p class="text-3xl md:text-5xl font-black text-amber-300 tracking-tight mb-2">
+                        7,500 ريال سعودي فقط
+                    </p>
+                    <p class="text-base md:text-lg font-bold text-amber-200/90 mb-4">
+                        (سبعة آلاف وخمسمائة ريال سعودي لا غير)
+                    </p>
+                    <p class="text-xs md:text-sm text-teal-100 bg-teal-900/70 inline-block px-4 py-2 rounded-xl border border-teal-700/60">
+                        تشمل التكلفة إدارة الحسابات والمحتوى والتصميمات وإدارة الحملات الإعلانية للقسمين طوال فترة التعاقد.
+                    </p>
+                </div>
+
+                <!-- ملاحظات مالية وتنفيذية -->
+                <div class="glass-card-dark p-6 rounded-2xl border-r-4 border-amber-400">
+                    <h3 class="font-black text-amber-300 text-base md:text-lg mb-3">ملاحظات مالية وتنفيذية:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-xs md:text-sm text-teal-50 leading-relaxed" id="financial-notes-list"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- التوقيع الختامي -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-2 border-teal-400/50 bg-gradient-to-r from-teal-950/90 via-teal-900/75 to-cyan-950/85">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-5 text-center md:text-right">
+                <img src="https://i.ibb.co/3mcGJZDm/f7a2f35c-a1d9-41a9-abab-883812218eaf.jpg" alt="شعار شركة شراع" class="w-16 h-16 rounded-2xl object-cover border-2 border-teal-400/60 shadow-lg flex-shrink-0">
+                <div class="space-y-2">
+                    <strong class="text-white text-xl font-black block">شركة شراع للتسويق والحلول الرقمية</strong>
+                    <p class="text-teal-50 text-sm md:text-base leading-relaxed">
+                        نتطلع إلى بناء شراكة ناجحة مع دار ديجور، والمساهمة في تعزيز حضوره الرقمي وترسيخ مكانته كوجهة متميزة للعناية والجمال، من خلال استراتيجية تسويقية تجمع بين الإبداع والانتشار وتحقيق النتائج.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- عناصر عائمة سفلية (الشعار المتحرك المتوهج + واتساب) -->
+    <div class="fixed bottom-5 left-5 z-50 flex items-center gap-3">
+        <div class="floating-glow-logo bg-teal-900/90 backdrop-blur-md p-1.5 rounded-2xl border-2 border-teal-400/80" title="شركة شراع للتسويق والحلول الرقمية">
+            <img src="https://i.ibb.co/3mcGJZDm/f7a2f35c-a1d9-41a9-abab-883812218eaf.jpg" alt="شعار شركة شراع" class="w-11 h-11 object-cover rounded-xl">
+        </div>
+        <a href="https://wa.me/966578310776" target="_blank" rel="noopener noreferrer"
+           class="bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-2xl shadow-2xl transition-transform hover:scale-105 border-2 border-emerald-300"
+           title="تواصل عبر واتساب">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- كود JavaScript لبناء البطاقات وتفعيل التفاعل والموشن -->
+    <script>
+        try {
+            // محاور المحتوى للقسم الرجالي
+            const menContentAxes = [
+                {
+                    title: "المحور الأول: المحتوى التعريفي بالخدمات",
+                    items: [
+                        "تقديم منشورات تعريفية بالخدمات المتاحة داخل القسم الرجالي.",
+                        "توضيح مميزات خدمات العناية بالشعر والبشرة والجسم.",
+                        "إبراز التجهيزات والمرافق المتاحة داخل المركز.",
+                        "تقديم محتوى يوضح أهمية العناية الشخصية والاهتمام بالمظهر.",
+                        "التعريف بالكوادر المهنية ومستوى الخبرة.",
+                        "إعداد منشورات توضيحية للخدمات وتجربة الاستفادة منها."
+                    ]
+                },
+                {
+                    title: "المحور الثاني: المحتوى التثقيفي",
+                    items: [
+                        "نصائح دورية للعناية بالشعر والبشرة.",
+                        "أخطاء شائعة في روتين العناية الشخصية.",
+                        "أهمية الاهتمام بالبشرة والجلد.",
+                        "نصائح للحفاظ على المظهر الصحي والأنيق.",
+                        "توضيح فوائد جلسات العناية والاسترخاء.",
+                        "محتوى توعوي يربط بين العناية الشخصية والثقة بالنفس."
+                    ]
+                },
+                {
+                    title: "المحور الثالث: المحتوى الترويجي",
+                    items: [
+                        "تصميم منشورات ترويجية للخدمات المميزة.",
+                        "إبراز العروض والباقات الموسمية.",
+                        "تقديم عروض خاصة لاستقطاب العملاء الجدد.",
+                        "تصميم محتوى خاص بالمناسبات والأعياد.",
+                        "إبراز الخدمات الأكثر طلباً.",
+                        "تقديم دعوات مباشرة للحجز وزيارة الفروع."
+                    ]
+                },
+                {
+                    title: "المحور الرابع: المحتوى التفاعلي",
+                    items: [
+                        "استطلاعات الرأي حول خدمات العناية الشخصية.",
+                        "أسئلة تفاعلية حول روتين العناية.",
+                        "مسابقات وتحديات بسيطة لزيادة التفاعل.",
+                        "مشاركة آراء وتجارب العملاء بعد الحصول على موافقتهم.",
+                        "محتوى الأسئلة الشائعة والإجابة عنها."
+                    ]
+                },
+                {
+                    title: "المحور الخامس: المحتوى المرئي والفيديو",
+                    items: [
+                        "إعداد فيديوهات قصيرة تستعرض أجواء المركز.",
+                        "تصوير أو مونتاج فيديوهات تعريفية بالخدمات.",
+                        "إبراز تفاصيل التجهيزات والنظافة والاهتمام بالعميل.",
+                        "إعداد فيديوهات قصيرة بنصائح متخصصة.",
+                        "إنتاج محتوى Reels وTikTok مناسب لطبيعة الجمهور الرجالي."
+                    ]
+                }
+            ];
+
+            // الحملات الإعلانية للقسم الرجالي
+            const menAdsCampaigns = [
+                {
+                    title: "الحملة الأولى: زيادة الوعي بالعلامة التجارية",
+                    goal: "تعريف الجمهور المستهدف بدار ديجور وخدماته الرجالية.",
+                    items: [
+                        "إطلاق حملات وصول وانتشار جغرافي.",
+                        "استهداف الرجال في الفئات العمرية المناسبة.",
+                        "إبراز هوية المركز وخدماته.",
+                        "استخدام الفيديوهات والمحتوى المرئي.",
+                        "التركيز على المناطق المحيطة بالفروع."
+                    ]
+                },
+                {
+                    title: "الحملة الثانية: استقطاب العملاء المحتملين",
+                    goal: "جذب عملاء جدد مهتمين بخدمات العناية الرجالية.",
+                    items: [
+                        "إعداد إعلانات ترويجية للخدمات.",
+                        "استهداف المهتمين بالعناية الشخصية.",
+                        "استخدام إعلانات الرسائل عبر المنصات المناسبة.",
+                        "توجيه العملاء إلى قنوات التواصل والحجز.",
+                        "اختبار أكثر من صيغة إعلانية لمعرفة الأفضل أداءً."
+                    ]
+                },
+                {
+                    title: "الحملة الثالثة: زيادة الحجوزات والزيارات",
+                    goal: "تحويل الاهتمام إلى حجوزات فعلية.",
+                    items: [
+                        "إعداد إعلانات مباشرة للحجز.",
+                        "إبراز العروض والباقات المتاحة.",
+                        "توجيه العملاء إلى روابط الحجز الخاصة بالفروع.",
+                        "استخدام إعلانات إعادة الاستهداف للمتفاعلين مع الحسابات.",
+                        "متابعة نتائج الحملات وتطوير الإعلانات وفقاً للأداء."
+                    ]
+                }
+            ];
+
+            // محاور المحتوى للقسم النسائي
+            const womenContentAxes = [
+                {
+                    title: "المحور الأول: المحتوى التعريفي بالخدمات",
+                    items: [
+                        "تقديم منشورات تفصيلية عن خدمات العناية بالشعر.",
+                        "إبراز خدمات العناية بالبشرة والجسم.",
+                        "التعريف بخدمات السبا والاسترخاء.",
+                        "تقديم محتوى تعريفي بالعلاجات التجميلية الاحترافية.",
+                        "إبراز المنتجات وأدوات السبا المتاحة.",
+                        "التعريف بفروع المركز ومميزات كل فرع.",
+                        "تسليط الضوء على الكوادر والخبرات المهنية."
+                    ]
+                },
+                {
+                    title: "المحور الثاني: المحتوى الجمالي والتثقيفي",
+                    items: [
+                        "نصائح العناية بالشعر والحفاظ على صحته.",
+                        "نصائح العناية بالبشرة وفقاً للاحتياجات المختلفة.",
+                        "أهمية الاهتمام بالجسم والعناية الدورية.",
+                        "محتوى تثقيفي حول روتين العناية الشخصية.",
+                        "نصائح الاستعداد للمناسبات.",
+                        "التعريف بأهمية جلسات السبا والاسترخاء.",
+                        "تقديم معلومات مبسطة عن الخدمات وطرق الاستفادة منها."
+                    ]
+                },
+                {
+                    title: "المحور الثالث: المحتوى الترويجي",
+                    items: [
+                        "تصميم منشورات خاصة بالعروض والباقات.",
+                        "الترويج للخدمات الأكثر طلباً.",
+                        "تقديم عروض موسمية ومناسبات خاصة.",
+                        "تصميم حملات ترويجية للأعياد والمواسم.",
+                        "إبراز الباقات التي تجمع أكثر من خدمة.",
+                        "إعداد محتوى يحفز على الحجز المباشر.",
+                        "تسليط الضوء على الخدمات المميزة داخل المركز."
+                    ]
+                },
+                {
+                    title: "المحور الرابع: المحتوى التفاعلي",
+                    items: [
+                        "استطلاعات الرأي حول خدمات التجميل والعناية.",
+                        "أسئلة تفاعلية حول روتين العناية بالشعر والبشرة.",
+                        "مسابقات لزيادة التفاعل والانتشار.",
+                        "نشر تقييمات وتجارب العميلات بموافقتهن.",
+                        "الإجابة عن الأسئلة المتكررة حول الخدمات.",
+                        "استخدام القصص اليومية للتفاعل مع الجمهور."
+                    ]
+                },
+                {
+                    title: "المحور الخامس: المحتوى المرئي والفيديو",
+                    items: [
+                        "فيديوهات قصيرة تستعرض أجواء المركز.",
+                        "فيديوهات تعريفية بالخدمات النسائية.",
+                        "محتوى بصري يبرز تفاصيل التجربة والخدمات.",
+                        "فيديوهات نصائح الجمال والعناية الشخصية.",
+                        "فيديوهات ترويجية للعروض والباقات.",
+                        "إعداد Reels وTikTok بأساليب إبداعية تناسب الجمهور النسائي.",
+                        "إبراز جودة التجهيزات والمنتجات والاهتمام بالتفاصيل."
+                    ]
+                }
+            ];
+
+            // الحملات الإعلانية للقسم النسائي
+            const womenAdsCampaigns = [
+                {
+                    title: "الحملة الأولى: زيادة الوعي والانتشار",
+                    goal: "زيادة معرفة النساء بعلامة دار ديجور وخدماته النسائية.",
+                    items: [
+                        "إطلاق حملات وصول وانتشار.",
+                        "استهداف النساء في مدينة الرياض.",
+                        "تخصيص الاستهداف الجغرافي للمناطق المحيطة بالفروع.",
+                        "استخدام الفيديوهات والتصاميم الجذابة.",
+                        "إبراز هوية المركز وجودة التجربة."
+                    ]
+                },
+                {
+                    title: "الحملة الثانية: الترويج للخدمات والعروض",
+                    goal: "زيادة الاهتمام بالخدمات النسائية وتحفيز الجمهور على الاستفادة منها.",
+                    items: [
+                        "إطلاق إعلانات مخصصة لكل مجموعة خدمات.",
+                        "الترويج للباقات والعروض الموسمية.",
+                        "إبراز الخدمات المميزة.",
+                        "اختبار الرسائل الإعلانية والتصاميم المختلفة.",
+                        "توجيه المهتمات إلى قنوات التواصل والحجز."
+                    ]
+                },
+                {
+                    title: "الحملة الثالثة: زيادة الحجوزات",
+                    goal: "تحقيق حجوزات فعلية وزيادة عدد العميلات الجدد.",
+                    items: [
+                        "إطلاق حملات الرسائل والتواصل المباشر.",
+                        "توجيه الإعلانات إلى روابط الحجز الخاصة بالفروع.",
+                        "استخدام إعلانات إعادة استهداف المتفاعلات.",
+                        "إعداد إعلانات مخصصة لكل فرع.",
+                        "تحليل نتائج الحملات وتحسين الاستهداف باستمرار."
+                    ]
+                }
+            ];
+
+            // ثالثاً: خطة إدارة حسابات التواصل الاجتماعي
+            const smManagementBlocks = [
+                {
+                    title: "1. إدارة الحسابات والمنصات",
+                    intro: "تشمل الإدارة التسويقية للمنصات التالية وفق الحسابات المعتمدة لدى المركز:",
+                    items: ["Instagram", "Snapchat", "TikTok", "Facebook"]
+                },
+                {
+                    title: "2. إعداد خطة المحتوى الشهرية",
+                    intro: "",
+                    items: [
+                        "إعداد تقويم محتوى شهري مستقل لكل قسم.",
+                        "تحديد الموضوعات والأهداف التسويقية لكل منشور.",
+                        "تحديد مواعيد النشر المناسبة.",
+                        "تنويع المحتوى بين التعريفي والتثقيفي والترويجي والتفاعلي.",
+                        "ربط المحتوى بالعروض والمناسبات الموسمية.",
+                        "مراجعة المحتوى قبل النشر لضمان توافقه مع الهوية التجارية."
+                    ]
+                },
+                {
+                    title: "3. التصميم والإنتاج الإبداعي",
+                    intro: "",
+                    items: [
+                        "تصميم منشورات احترافية متوافقة مع هوية دار ديجور.",
+                        "إعداد تصاميم خاصة بالعروض والخدمات.",
+                        "إعداد تصميمات القصص اليومية.",
+                        "مونتاج فيديوهات قصيرة مناسبة للمنصات المختلفة.",
+                        "إعداد محتوى مرئي يبرز جودة الخدمات.",
+                        "توحيد الهوية البصرية مع مراعاة اختلاف القسمين."
+                    ]
+                },
+                {
+                    title: "4. النشر وإدارة التفاعل",
+                    intro: "",
+                    items: [
+                        "جدولة ونشر المحتوى وفق التقويم المعتمد.",
+                        "متابعة التعليقات والتفاعلات.",
+                        "متابعة الرسائل والاستفسارات الواردة عبر الحسابات ضمن نطاق إدارة التفاعل.",
+                        "توجيه الاستفسارات المتعلقة بالحجز إلى قنوات التواصل المعتمدة لدى المركز.",
+                        "رصد الأسئلة المتكررة واقتراح محتوى للإجابة عنها.",
+                        "متابعة أداء المنشورات وتحليل مستوى التفاعل."
+                    ]
+                },
+                {
+                    title: "5. حجم العمل الشهري المقترح",
+                    intro: "يشمل نطاق العمل الشهري:",
+                    items: [
+                        "12 قطعة محتوى رئيسية شهرياً، موزعة بالتساوي بين القسمين.",
+                        "4 فيديوهات قصيرة شهرياً من المواد المصورة المتاحة أو المقدمة من المركز.",
+                        "12 إلى 16 قصة تفاعلية وتسويقية شهرياً.",
+                        "إعداد تقويم محتوى شهري.",
+                        "تصميم المحتوى الترويجي والموسمي.",
+                        "إدارة النشر والمتابعة والتفاعل."
+                    ]
+                }
+            ];
+
+            // رابعاً: المنصات الإعلانية وآلية الإدارة
+            const adPlatforms = [
+                {
+                    title: "1. Instagram وFacebook Ads",
+                    items: [
+                        "حملات زيادة الوعي والانتشار.",
+                        "حملات التفاعل مع المحتوى.",
+                        "حملات الرسائل والاستفسارات.",
+                        "حملات إعادة استهداف الجمهور المهتم.",
+                        "الحملات الترويجية للخدمات والعروض."
+                    ]
+                },
+                {
+                    title: "2. Snapchat Ads",
+                    items: [
+                        "حملات الانتشار والوصول إلى الجمهور المحلي.",
+                        "الترويج للفيديوهات والخدمات.",
+                        "استهداف الجمهور النسائي والرجالي وفق طبيعة كل حملة.",
+                        "دعم الحملات الموسمية والعروض."
+                    ]
+                },
+                {
+                    title: "3. TikTok Ads",
+                    items: [
+                        "الترويج للفيديوهات القصيرة.",
+                        "زيادة الوعي بالعلامة التجارية.",
+                        "الوصول إلى شرائح جديدة من العملاء.",
+                        "استخدام المحتوى المرئي في جذب الاهتمام وتحفيز الحجز."
+                    ]
+                }
+            ];
+
+            const adMechanism = [
+                "دراسة أهداف كل قسم وتحديد الأولويات الإعلانية.",
+                "إعداد الجمهور المستهدف وفق العمر والاهتمامات والموقع الجغرافي.",
+                "إنشاء حملات منفصلة للقسم الرجالي والنسائي.",
+                "إعداد المواد الإعلانية المناسبة لكل منصة.",
+                "اختبار أكثر من تصميم ورسالة إعلانية.",
+                "مراقبة أداء الحملات بشكل مستمر.",
+                "تحسين الميزانيات وتوزيعها بناءً على النتائج.",
+                "إيقاف الإعلانات ضعيفة الأداء وتطوير الإعلانات الناجحة.",
+                "إعادة استهداف الجمهور الذي تفاعل مع الإعلانات أو الحسابات.",
+                "إعداد تقارير دورية توضح نتائج الحملات والتوصيات."
+            ];
+
+            // خامساً: الجدول الزمني
+            const timelineMonths = [
+                {
+                    month: "الشهر الأول: التأسيس وبناء الحضور الرقمي",
+                    accent: "teal",
+                    men: [
+                        "دراسة الجمهور المستهدف والمناطق الجغرافية.",
+                        "إعداد الهوية التحريرية للمحتوى الرجالي.",
+                        "نشر المحتوى التعريفي بالخدمات.",
+                        "إطلاق حملات الوعي والانتشار.",
+                        "بدء حملات اختبار الجمهور والاستهداف."
+                    ],
+                    women: [
+                        "إعداد استراتيجية المحتوى النسائي.",
+                        "إبراز الخدمات والباقات المتاحة.",
+                        "إطلاق محتوى تعريفي وتثقيفي.",
+                        "بدء حملات زيادة الوعي بالعلامة التجارية.",
+                        "اختبار الشرائح الإعلانية المختلفة."
+                    ],
+                    goal: "بناء حضور رقمي منظم وتحديد الجمهور والإعلانات الأكثر استجابة."
+                },
+                {
+                    month: "الشهر الثاني: التوسع وزيادة التفاعل والاستفسارات",
+                    accent: "cyan",
+                    men: [
+                        "زيادة التركيز على الخدمات الأكثر اهتماماً.",
+                        "تطوير المحتوى المرئي.",
+                        "إطلاق الحملات الترويجية.",
+                        "تعزيز حملات الرسائل والحجوزات.",
+                        "إعادة استهداف الجمهور المتفاعل."
+                    ],
+                    women: [
+                        "التوسع في المحتوى الجمالي والتثقيفي.",
+                        "إبراز الخدمات والباقات الأكثر طلباً.",
+                        "إطلاق حملات ترويجية مخصصة.",
+                        "تكثيف حملات الرسائل والحجز.",
+                        "إعادة استهداف المهتمات بالخدمات."
+                    ],
+                    goal: "رفع مستوى التفاعل وزيادة الاستفسارات والعملاء المحتملين."
+                },
+                {
+                    month: "الشهر الثالث: تحسين النتائج وزيادة الحجوزات",
+                    accent: "amber",
+                    men: [
+                        "التركيز على الإعلانات الأعلى أداءً.",
+                        "تعزيز حملات الحجز المباشر.",
+                        "الترويج للخدمات والعروض المميزة.",
+                        "إعادة استهداف العملاء المحتملين.",
+                        "تحسين الاستهداف الجغرافي."
+                    ],
+                    women: [
+                        "تعزيز الحملات التي حققت أفضل نتائج.",
+                        "التركيز على الخدمات الأعلى طلباً.",
+                        "تكثيف الحملات الترويجية.",
+                        "استهداف الجمهور المتفاعل سابقاً.",
+                        "دعم حملات الحجز للفرعين."
+                    ],
+                    goal: "تحسين كفاءة الإنفاق الإعلاني وزيادة فرص تحويل الجمهور المهتم إلى حجوزات فعلية."
+                }
+            ];
+
+            // سادساً: مؤشرات الأداء
+            const kpisList = [
+                "معدل نمو المتابعين لكل قسم.",
+                "إجمالي الوصول والانطباعات الإعلانية.",
+                "معدل التفاعل مع المنشورات والفيديوهات.",
+                "عدد مشاهدات الفيديوهات ونسب إكمال المشاهدة.",
+                "عدد الرسائل والاستفسارات الواردة.",
+                "تكلفة الحصول على الاستفسار أو العميل المحتمل.",
+                "عدد النقرات على روابط الحجز.",
+                "أداء الحملات الإعلانية لكل قسم وفرع.",
+                "أفضل الخدمات من حيث الاهتمام والتفاعل.",
+                "كفاءة الإنفاق الإعلاني ومعدلات التحويل عند توفر بيانات الحجوزات."
+            ];
+
+            // سابعاً: المخرجات النهائية
+            const deliverablesList = [
+                "إدارة المحتوى الرقمي للقسم الرجالي.",
+                "إدارة المحتوى الرقمي للقسم النسائي.",
+                "إعداد وتنفيذ استراتيجية محتوى مستقلة لكل قسم.",
+                "تصميم المنشورات والمواد التسويقية.",
+                "إعداد ومونتاج الفيديوهات القصيرة.",
+                "إدارة وجدولة المحتوى.",
+                "إدارة التفاعل والمتابعة.",
+                "إعداد وإدارة الحملات الإعلانية الممولة.",
+                "تحليل وتحسين أداء الحملات.",
+                "إعداد التقارير الدورية.",
+                "تقديم التوصيات التسويقية لتطوير النتائج."
+            ];
+
+            // ثامناً: ملاحظات مالية وتنفيذية
+            const financialNotes = [
+                "قيمة الميزانيات الإعلانية المدفوعة للمنصات غير مشمولة في قيمة التعاقد، ويتحملها العميل بشكل مستقل.",
+                "يتم توفير المواد المصورة الخاصة بالخدمات والفروع من جانب المركز، وتتولى شركة شراع إعدادها ومعالجتها ومونتاجها ضمن نطاق المحتوى المتفق عليه.",
+                "يتم اعتماد المحتوى والعروض قبل النشر والإعلان.",
+                "يتم تحديد تفاصيل الخدمات والأسعار والعروض الترويجية بالتنسيق مع إدارة المركز.",
+                "لا تشمل الباقة التصوير الميداني أو إدارة الحجوزات أو إتمام عمليات البيع نيابة عن المركز.",
+                "يتم تنفيذ الحملات الإعلانية من خلال الحسابات الإعلانية المعتمدة للمركز."
+            ];
+
+            // دالة مساعدة لرسم بطاقات المحاور
+            function renderContentAxes(containerId, axes, borderClass) {
+                const container = document.getElementById(containerId);
+                axes.forEach(axis => {
+                    const card = document.createElement('div');
+                    card.className = `glass-card-dark motion-card p-5 rounded-2xl border-t-4 ${borderClass}`;
+                    card.innerHTML = `
+                        <h4 class="font-bold text-white text-base border-b border-teal-800/80 pb-2.5 mb-3">${axis.title}</h4>
+                        <ul class="list-disc list-inside space-y-1.5 text-xs md:text-sm text-teal-50 leading-relaxed">
+                            ${axis.items.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            // دالة مساعدة لرسم بطاقات الحملات الإعلانية
+            function renderAdsCampaigns(containerId, campaigns, borderClass, badgeClass) {
+                const container = document.getElementById(containerId);
+                campaigns.forEach(camp => {
+                    const card = document.createElement('div');
+                    card.className = `glass-card-dark motion-card p-5 rounded-2xl border-r-4 ${borderClass} flex flex-col justify-between`;
+                    card.innerHTML = `
+                        <div>
+                            <h4 class="font-bold text-white text-base mb-2">${camp.title}</h4>
+                            <div class="${badgeClass} p-3 rounded-xl text-xs md:text-sm mb-3 leading-relaxed">
+                                <strong>الهدف:</strong> ${camp.goal}
+                            </div>
+                            <p class="text-xs font-bold text-teal-200 mb-2">آلية التنفيذ:</p>
+                            <ul class="list-disc list-inside space-y-1.5 text-xs md:text-sm text-teal-50 leading-relaxed">
+                                ${camp.items.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            }
+
+            renderContentAxes('men-content-grid', menContentAxes, 'border-cyan-400');
+            renderAdsCampaigns('men-ads-grid', menAdsCampaigns, 'border-cyan-400', 'bg-cyan-950/70 border border-cyan-700/50 text-cyan-100');
+
+            renderContentAxes('women-content-grid', womenContentAxes, 'border-emerald-400');
+            renderAdsCampaigns('women-ads-grid', womenAdsCampaigns, 'border-emerald-400', 'bg-emerald-950/70 border border-emerald-700/50 text-emerald-100');
+
+            // رسم خطة إدارة حسابات التواصل
+            const smGrid = document.getElementById('sm-management-grid');
+            smManagementBlocks.forEach(block => {
+                const card = document.createElement('div');
+                card.className = 'glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-teal-400';
+                card.innerHTML = `
+                    <h3 class="font-bold text-white text-base md:text-lg border-b border-teal-800/80 pb-2.5 mb-3">${block.title}</h3>
+                    ${block.intro ? `<p class="text-xs md:text-sm text-teal-200 mb-2 font-semibold">${block.intro}</p>` : ''}
+                    <ul class="list-disc list-inside space-y-1.5 text-xs md:text-sm text-teal-50 leading-relaxed">
+                        ${block.items.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                `;
+                smGrid.appendChild(card);
+            });
+
+            // رسم المنصات الإعلانية وآلية الإدارة
+            const adPlatformsGrid = document.getElementById('ad-platforms-grid');
+            adPlatforms.forEach(plat => {
+                const card = document.createElement('div');
+                card.className = 'glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-amber-400';
+                card.innerHTML = `
+                    <h4 class="font-bold text-white text-base border-b border-teal-800/80 pb-2.5 mb-3">${plat.title}</h4>
+                    <ul class="list-disc list-inside space-y-1.5 text-xs md:text-sm text-teal-50 leading-relaxed">
+                        ${plat.items.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                `;
+                adPlatformsGrid.appendChild(card);
+            });
+
+            const adMechanismEl = document.getElementById('ad-mechanism-list');
+            adMechanism.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                adMechanismEl.appendChild(li);
+            });
+
+            // رسم الجدول الزمني
+            const timelineGrid = document.getElementById('timeline-grid');
+            timelineMonths.forEach(item => {
+                const card = document.createElement('div');
+                card.className = `glass-card-dark motion-card p-6 rounded-3xl border-t-4 border-${item.accent}-400 flex flex-col justify-between space-y-5`;
+                card.innerHTML = `
+                    <div class="space-y-4">
+                        <h3 class="font-black text-white text-lg border-b border-teal-800/80 pb-3">${item.month}</h3>
+                        <div>
+                            <h4 class="font-bold text-cyan-300 text-sm mb-2">القسم الرجالي:</h4>
+                            <ul class="list-disc list-inside space-y-1.5 text-xs md:text-sm text-teal-50 leading-relaxed">
+                                ${item.men.map(m => `<li>${m}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-emerald-300 text-sm mb-2">القسم النسائي:</h4>
+                            <ul class="list-disc list-inside space-y-1.5 text-xs md:text-sm text-teal-50 leading-relaxed">
+                                ${item.women.map(w => `<li>${w}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-teal-950/90 p-4 rounded-2xl border border-${item.accent}-500/40 text-xs md:text-sm text-${item.accent}-200 leading-relaxed">
+                        <strong>الهدف الرئيسي:</strong> ${item.goal}
+                    </div>
+                `;
+                timelineGrid.appendChild(card);
+            });
+
+            // رسم المؤشرات والمخرجات والملاحظات المالية
+            const kpisEl = document.getElementById('kpis-list');
+            kpisList.forEach(kpi => {
+                const li = document.createElement('li');
+                li.textContent = kpi;
+                kpisEl.appendChild(li);
+            });
+
+            const deliverablesEl = document.getElementById('deliverables-list');
+            deliverablesList.forEach(del => {
+                const li = document.createElement('li');
+                li.textContent = del;
+                deliverablesEl.appendChild(li);
+            });
+
+            const finNotesEl = document.getElementById('financial-notes-list');
+            financialNotes.forEach(note => {
+                const li = document.createElement('li');
+                li.textContent = note;
+                finNotesEl.appendChild(li);
+            });
+
+            // تفعيل تأثيرات الموشن الانسيابية عند التمرير (Intersection Observer)
+            const revealElements = document.querySelectorAll('.motion-reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, idx) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, idx * 70);
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.04 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        } catch (error) {
+            console.error('حدث خطأ أثناء تهيئة العرض:', error);
+        }
+    </script>
+</body>
+</html>
